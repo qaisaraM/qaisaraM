@@ -198,9 +198,9 @@ My primary interests include:
 
 ---
 
-## ⭐ Closing Statement  
+## ⭐ Mission
 
 I am driven by one goal:  
-**to transform manual industrial processes into intelligent, data-driven systems that improve efficiency, accuracy, and scalability.**
+**Transform manual industrial processes into intelligent, data-driven systems that improve efficiency, accuracy, and scalability.**
 
 ---
