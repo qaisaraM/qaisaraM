@@ -1,198 +1,177 @@
 <div align="center">
 
 # 🚀 Qaisara Mardhiah Binti Roslan
-### Process Innovation Engineer | Industrial Systems & Data Science Developer | Machine Learning & Automation Specialist
+### Process Innovation Engineer | Industrial Systems Developer | Data Science & Automation Enthusiast
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=Process+Innovation+Through+AI+%26+Automation;Industrial+Systems+Engineering+%7C+Data+Science+%7C+Machine+Learning;Transforming+Manual+Operations+Into+Intelligent+Digital+Systems" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00C2FF&center=true&vCenter=true&width=850&lines=Turning+manual+workflows+into+automated+systems;Building+real+industrial+solutions+with+AI+%26+data;Focus+on+practical+automation+%26+process+improvement" />
 
 </div>
 
 ---
 
-# 👨‍💻 Professional Summary
+# 👨‍💻 About Me
 
-I am a **Process Innovation Engineer specializing in Industrial Systems Engineering, Data Science, and Machine Learning applications**.
+I work on improving real industrial processes by turning manual, repetitive tasks into automated systems.
 
-I design and deploy **end-to-end intelligent industrial systems** that transform manual operations into **automated, data-driven, and scalable digital workflows**.
+Most of my projects come from actual operational problems — things like manual counting, paper-based tracking, and slow inspection processes. I focus on making these faster, more reliable, and easier to monitor using software and data.
 
-My engineering work integrates:
-- Industrial Process Optimization
-- Computer Vision & Machine Learning
-- Real-time Data Processing Systems
-- Workflow Automation Architecture
-- Operational Analytics & KPI Monitoring
+My main interests are:
+- Industrial automation and workflow improvement  
+- Data-driven decision making  
+- Computer vision applications in production  
+- Building simple but effective dashboards and tracking systems  
+
+I prefer working on systems that are **used in real environments**, not just simulations.
 
 ---
 
-# ⚙️ Core Expertise
+# ⚙️ What I Work On
 
-- Industrial Process Automation & Digital Transformation
-- Production Workflow Optimization
-- Data Science & Statistical Analysis
-- Machine Learning (Computer Vision & Predictive Systems)
-- Real-time Event-driven Systems
-- Inventory & Warehouse Intelligence Systems
-- Industrial Dashboard & KPI Visualization
+- Automating factory and warehouse processes  
+- Replacing manual tracking with digital workflows  
+- Using computer vision for inspection and detection tasks  
+- Building lightweight data systems using Python and Excel  
+- Creating dashboards for operational visibility  
+- Improving process accuracy and reducing human error  
 
 ---
 
 # 🛠 Technical Skills
 
-### Programming
-- Python (Advanced)
-- SQL (Data handling)
-- JavaScript (Dashboards/UI)
+**Programming & Data**
+- Python (main language)
+- Basic SQL
+- Data handling with Pandas
 
-### Data Science
-- Pandas, NumPy
-- Feature Engineering & Data Cleaning
-- Statistical Analysis & KPI Modelling
+**Machine Learning / Vision**
+- YOLOv8 for object detection
+- OpenCV for image processing
+- Basic ML concepts (classification, detection, validation)
 
-### Machine Learning & AI
-- YOLOv8 (Object Detection)
-- OpenCV (Computer Vision)
-- Scikit-learn
-- Face Recognition Systems (MTCNN / LBPH concepts)
+**Visualization & Reporting**
+- Excel automation (pandas, openpyxl)
+- Basic dashboard design (web / Power BI concepts)
 
-### Visualization
-- Excel Automation (pandas, openpyxl)
-- Power BI (Dashboard design)
-- Web dashboards (HTML/CSS/JS)
+**Systems & Tools**
+- Git / GitHub
+- Camera integration (industrial vision systems)
+- Real-time event-based systems
 
 ---
 
-# 🚀 Featured Projects
+# 🚀 Projects
 
 ---
 
-## 📦 Pallet Inspection System (Industrial AI Vision System)
+## 📦 Pallet Inspection System
 
 🔗 Live Demo:  
 https://qaisaram.github.io/PALLET-INSPECTION-SYSTEM/
 
-🔗 GitHub:  
+🔗 Code:  
 https://github.com/qaisaraM/PALLET-INSPECTION-SYSTEM
 
-### 📌 Overview
-AI-powered industrial inspection system that automates pallet counting and quality verification using computer vision.
+I built this system to replace manual pallet inspection in a production line.
 
-### 💡 Key Features
-- YOLOv8 object detection pipeline
-- Industrial camera integration (Hikrobot SDK)
-- Grid-based spatial inference system
-- OpenCV validation (Hough Circles + Blob detection)
-- Automated Excel reporting system
+Previously, operators had to manually count parts, which was slow and inconsistent. I used computer vision (YOLOv8 + OpenCV) to automate detection and counting.
 
-### 📈 Impact
-- Reduced inspection time by **up to 24x**
-- Near-zero counting errors
-- Fully automated reporting workflow
+What it does:
+- Detects parts on pallets using camera input  
+- Validates missing or extra items using grid logic  
+- Generates automatic Excel reports  
+- Reduces inspection time significantly  
 
 ---
 
-## 🔄 Process Tracking System (Workflow Digitalization)
+## 🔄 Process Tracking System
 
 🔗 Live Demo:  
 https://qaisaram.github.io/PROCESS-TRACKING-SYSTEM/
 
-🔗 GitHub:  
+🔗 Code:  
 https://github.com/qaisaraM/PROCESS-TRACKING-SYSTEM
 
-### 📌 Overview
-Digital workflow system replacing paper-based production tracking with a scan-based automated system.
+This project replaces paper-based production tracking with a scan-based system.
 
-### 💡 Key Features
-- QR scan-based event capture (OpenCV)
-- Event-driven architecture
-- Process routing engine
-- Excel-based database system
-- Real-time dashboard synchronization
+Instead of writing manually, operators scan to start and end processes. The system records everything automatically.
 
-### 📈 Impact
-- Eliminated manual tracking sheets
-- Improved production traceability
-- Enabled real-time monitoring
+What it does:
+- QR scan-based workflow tracking  
+- Automatic timestamp logging  
+- Excel-based data storage  
+- Live dashboard updates  
 
 ---
 
-## 📦 Stock Control System (Inventory Optimization)
+## 📦 Stock Control System
 
 🔗 Live Demo:  
 https://qaisaram.github.io/STOCK-CONTROL-SYSTEM/
 
-🔗 GitHub:  
+🔗 Code:  
 https://github.com/qaisaraM/STOCK-CONTROL-SYSTEM
 
-### 📌 Overview
-Warehouse inventory management system for improving stock visibility and reducing mismatch errors.
+A simple inventory tracking system designed for warehouse use.
 
-### 💡 Key Features
-- Stock in/out tracking system
-- Automated Excel updates
-- Inventory dashboard
-- Stock analytics reporting
+It helps track stock in and out, and keeps data updated automatically without manual entry errors.
 
 ---
 
-## 💉 COVID-19 Global Vaccine Tracker (Data Science Project)
+## 💉 COVID-19 Vaccine Tracker
 
-🔗 GitHub:  
+🔗 Code:  
 https://github.com/qaisaraM/COVID-19-Global-Vaccine-Tracker
 
-### 📌 Overview
-Global data science project analyzing vaccination trends and country-level COVID-19 progress.
+A data analysis project that explores global vaccination trends using Python.
 
-### 💡 Key Features
-- Data cleaning & preprocessing
-- Time-series analysis
-- Country comparison dashboards
-- Insight generation from real-world datasets
+Focus was on:
+- Cleaning real-world data  
+- Comparing countries  
+- Visualizing trends over time  
 
 ---
 
-# 🧠 Engineering Contributions
+# 🧠 What I Learned From These Projects
 
-- Built industrial-grade AI systems deployed in real environments
-- Designed full-stack automation pipelines (hardware → software → analytics)
-- Developed event-driven process tracking architectures
-- Applied machine learning to solve real manufacturing problems
-- Reduced operational inefficiencies through automation
+Most of my learning came from real constraints:
 
----
-
-# 🎓 Scholarship Alignment Statement
-
-My work aligns strongly with:
-- Data Science & Artificial Intelligence
-- Industrial Engineering & Smart Manufacturing
-- Systems Optimization & Automation
-- Applied Machine Learning in Real-world Environments
-
-I aim to pursue advanced studies to bridge the gap between **AI research and industrial deployment systems**.
+- Industrial environments are messy — systems must be robust, not perfect  
+- Automation is more about reliability than complexity  
+- Users prefer simple systems over advanced features  
+- Hardware + software integration is often the hardest part  
 
 ---
 
-# 🎯 Career Objective
+# 🎓 Why This Matters for My Studies
 
-To contribute to:
-- Smart Manufacturing Systems
-- Industrial Automation & Digital Transformation
-- Data-driven Operations Engineering
-- Machine Learning Applications in Industry
-- Process Optimization & Systems Engineering
+These projects shaped my interest in:
+- Data science applied to real systems  
+- Industrial engineering and automation  
+- Machine learning for practical use cases  
+- Process optimization in manufacturing  
 
----
-
-# 🌍 Connect With Me
-
-- GitHub: https://github.com/qaisaraM
-- LinkedIn: YOUR_LINKEDIN_URL
-- Email: YOUR_EMAIL
+I want to continue developing systems that connect **data, automation, and real operations**.
 
 ---
 
-# ⭐ Closing Statement
+# 🎯 Career Direction
 
-> “Engineering intelligent systems that transform manual industrial processes into scalable, data-driven automation ecosystems.”
+I am interested in roles involving:
+- Industrial automation engineering  
+- Data-driven operations improvement  
+- Smart manufacturing systems  
+- Applied machine learning in real environments  
 
 ---
+
+# 🌍 Links
+
+- GitHub: https://github.com/qaisaraM  
+- LinkedIn: YOUR_LINKEDIN_URL  
+- Email: YOUR_EMAIL  
+
+---
+
+# ⭐ Final Note
+
+I enjoy building systems that solve real problems in real workplaces — especially where automation can remove repetitive manual work.
