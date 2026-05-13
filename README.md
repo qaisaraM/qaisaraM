@@ -176,14 +176,17 @@ My strength lies in building systems that are not only technically sound but als
 
 ---
 
-## 🎯 Career Direction  
+## 🎯 Career Direction
 
-I am seeking opportunities in:
+I am seeking opportunities in areas where data science, machine learning, and industrial systems engineering intersect to solve real operational problems, particularly in manufacturing and production environments.
 
-- Data Science & Machine Learning Engineering  
-- Industrial Automation & Smart Manufacturing  
-- Process Optimization & Digital Transformation  
-- Business Intelligence & Analytics Engineering  
+My primary interests include:
+
+ - Industrial AI & Smart Manufacturing Systems
+ - Machine Learning & Computer Vision Engineering
+ - Process Optimization & Operational Excellence
+ - Industrial Automation & Digital Transformation (Industry 4.0)
+ - Business Intelligence & Data-Driven Decision Systems
 
 ---
 
