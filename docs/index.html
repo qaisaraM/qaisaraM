@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qaisara Mardhiah — Process Innovation Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050A0E;
+    --surface: #0D1B24;
+    --surface2: #122130;
+    --accent: #00E5FF;
+    --accent2: #FF6B35;
+    --accent3: #7FFF00;
+    --text: #E8F4F8;
+    --muted: #7A9BAA;
+    --border: rgba(0,229,255,0.15);
+    --glow: 0 0 40px rgba(0,229,255,0.2);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
+
+  /* ── GRID LINES BG ── */
+  .grid-bg {
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(5,10,14,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-scanner {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    animation: scan 4s ease-in-out infinite;
+  }
+
+  @keyframes scan {
+    0% { top: 0; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  .hero-orb {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+    right: -100px; top: 50%;
+    transform: translateY(-50%);
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  .hero-orb2 {
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,107,53,0.06) 0%, transparent 70%);
+    left: 10%; bottom: 10%;
+    animation: pulse 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.1); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: rgba(0,229,255,0.05);
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  h1 .accent { color: var(--accent); }
+  h1 .accent2 { color: var(--accent2); }
+
+  .hero-role {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+    color: var(--muted);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: #9FBFCC;
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 700;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    box-shadow: var(--glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--border);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    background: rgba(0,229,255,0.05);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+    display: flex;
+    gap: 3rem;
+    animation: fadeUp 0.6s 0.5s ease both;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 4rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--surface); }
+
+  .timeline {
+    position: relative;
+    max-width: 900px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .tl-item {
+    padding-left: 3rem;
+    padding-bottom: 3.5rem;
+    position: relative;
+  }
+
+  .tl-item:last-child { padding-bottom: 0; }
+
+  .tl-dot {
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  .tl-dot.dim { background: var(--muted); box-shadow: none; }
+
+  .tl-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .tl-company {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tl-period {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-left: auto;
+  }
+
+  .tl-role {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .tl-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .tl-bullets li {
+    font-size: 0.9rem;
+    color: #9FBFCC;
+    padding-left: 1.2rem;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .tl-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent2);
+    font-size: 0.7rem;
+    top: 0.1rem;
+  }
+
+  .highlight-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(127,255,0,0.08);
+    border: 1px solid rgba(127,255,0,0.3);
+    color: var(--accent3);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    padding: 0.3rem 0.8rem;
+    margin-top: 1rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .skill-card:hover {
+    border-color: rgba(0,229,255,0.4);
+    transform: translateY(-4px);
+  }
+
+  .skill-card:hover::before { transform: scaleX(1); }
+
+  .skill-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-card-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(0,229,255,0.06);
+    border: 1px solid rgba(0,229,255,0.2);
+    color: var(--text);
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+  }
+
+  .tag.orange {
+    background: rgba(255,107,53,0.06);
+    border-color: rgba(255,107,53,0.25);
+  }
+
+  .tag.green {
+    background: rgba(127,255,0,0.06);
+    border-color: rgba(127,255,0,0.25);
+    color: var(--accent3);
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--surface); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    border-color: rgba(0,229,255,0.4);
+    box-shadow: var(--glow);
+    transform: translateY(-4px);
+  }
+
+  .project-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(0,229,255,0.06);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .project-status {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  .status-deployed {
+    background: rgba(127,255,0,0.1);
+    color: var(--accent3);
+    border: 1px solid rgba(127,255,0,0.3);
+  }
+
+  .status-ml {
+    background: rgba(255,107,53,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(255,107,53,0.3);
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: #7A9BAA;
+    margin-bottom: 1.5rem;
+    flex: 1;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .project-impact {
+    background: rgba(0,229,255,0.04);
+    border-left: 2px solid var(--accent);
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+  }
+
+  .tech-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    padding: 0.2rem 0.6rem;
+    background: var(--surface2);
+    color: var(--muted);
+    border-radius: 2px;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .project-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .project-links a:hover {
+    border-color: var(--accent);
+    background: rgba(0,229,255,0.08);
+  }
+
+  /* ── TRAINING ── */
+  .training-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .training-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: border-color 0.2s;
+  }
+
+  .training-item:hover { border-color: rgba(0,229,255,0.35); }
+
+  .training-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .training-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .training-org {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* ── LANGUAGES ── */
+  .lang-grid {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .lang-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    min-width: 140px;
+    transition: border-color 0.2s;
+  }
+
+  .lang-item:hover { border-color: rgba(0,229,255,0.4); }
+
+  .lang-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .lang-level {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--surface);
+    text-align: center;
+  }
+
+  .contact-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .contact-desc {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text);
+    text-decoration: none;
+    padding: 1rem 1.8rem;
+    border: 1px solid var(--border);
+    letter-spacing: 0.05em;
+    transition: all 0.25s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: var(--glow);
+    transform: translateY(-2px);
+  }
+
+  .contact-link .icon { font-size: 1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── FLOATING BADGE ── */
+  .japan-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,107,53,0.1);
+    border: 1px solid rgba(255,107,53,0.35);
+    color: var(--accent2);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    padding: 0.4rem 1rem;
+    margin-top: 1rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    #hero { padding: 7rem 1.5rem 8rem; }
+    .hero-stats { position: relative; right: auto; bottom: auto; margin-top: 3rem; justify-content: flex-start; }
+    h1 { font-size: 2.8rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">QM // PORTFOLIO</div>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#training">Training</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-scanner"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Available for Opportunities</div>
+    <h1>
+      Qaisara<br>
+      <span class="accent">Mardhiah</span><br>
+      <span style="font-size:0.55em; color: var(--muted);">Binti Roslan</span>
+    </h1>
+    <p class="hero-role">Process Innovation Engineer &nbsp;/&nbsp; AI Vision Systems &nbsp;/&nbsp; Edge Deployment</p>
+    <p class="hero-desc">
+      Building production-grade computer vision and AI systems that run at 0.003 mm precision on the factory floor. 2 years deploying real-time intelligence into manufacturing environments — from Python prototype to NVIDIA Jetson edge deployment.
+    </p>
+    <div class="hero-cta">
+      <a href="mailto:qaisaramardhiahr@gmail.com" class="btn btn-primary">Get In Touch</a>
+      <a href="#projects" class="btn btn-ghost">View Projects</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">2+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Counting Accuracy</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">0.003<span style="font-size:1rem;">mm</span></span>
+      <span class="stat-label">Detection Precision</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-label">01</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-meta">
+        <span class="tl-company">Yokowo Electronics (M) Sdn Bhd — Kulim, Kedah</span>
+        <span class="tl-period">April 2024 – Present</span>
+      </div>
+      <div class="tl-role">Process Innovation Engineer</div>
+      <ul class="tl-bullets">
+        <li>Engineered a real-time AI counting system for micro-sized components inside jigs, handling object sizes from 0.03 mm down to 0.003 mm — precision at the limit of human visibility.</li>
+        <li>Achieved up to 100% counting accuracy across most product variants after full production-floor deployment, strengthening in-line QA and reducing defect escape.</li>
+        <li>Integrated camera SDKs (Hikrobot, Telicam) and optimized image processing pipelines for high-speed, stable mass-production data acquisition.</li>
+        <li>Deployed AI models on NVIDIA Jetson Orin Nano (Linux) for low-latency, real-time automated inspection inference on the production line.</li>
+        <li>Selected to present the project at corporate HQ in Japan — delivered full technical briefing in Japanese to engineering leadership.</li>
+      </ul>
+      <div class="japan-badge">🇯🇵 Presented at Japan HQ — Technical delivery in Japanese</div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot dim"></div>
+      <div class="tl-meta">
+        <span class="tl-company">GOTT Sdn Bhd — Batu Kawan, Penang</span>
+        <span class="tl-period">Oct 2023 – Jan 2024</span>
+      </div>
+      <div class="tl-role">R&D Engineer</div>
+      <ul class="tl-bullets">
+        <li>Executed specialized job orders for education-based training systems aligned to customer technical requirements.</li>
+        <li>Developed technical documentation and QC guidelines improving handoff workflow between R&D and production teams.</li>
+        <li>Managed multiple small-scale projects with consistent on-time delivery.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot dim"></div>
+      <div class="tl-meta">
+        <span class="tl-company">GOTT Sdn Bhd — Batu Kawan, Penang</span>
+        <span class="tl-period">Aug 2022 – Oct 2022</span>
+      </div>
+      <div class="tl-role">Biomedical Engineer Trainee</div>
+      <ul class="tl-bullets">
+        <li>Collaborated with vendor engineers on Preventive Maintenance procedures for radiotherapy devices.</li>
+        <li>Led development of a patient data storage GUI (Windows Visual Studio) enabling accurate radiation dosage recording for doctors and radiographers.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-label">02</span>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">🤖</div>
+      <div class="skill-card-title">AI & Machine Learning</div>
+      <div class="skill-tags">
+        <span class="tag">YOLOv8</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">Keras</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">CNN</span>
+        <span class="tag">Anomaly Detection</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">👁️</div>
+      <div class="skill-card-title">Computer Vision</div>
+      <div class="skill-tags">
+        <span class="tag orange">OpenCV</span>
+        <span class="tag orange">Real-time Detection</span>
+        <span class="tag orange">Hikrobot MVS SDK</span>
+        <span class="tag orange">Telicam SDK</span>
+        <span class="tag orange">Image Pipelines</span>
+        <span class="tag orange">Frame Acquisition</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">⚡</div>
+      <div class="skill-card-title">Edge AI & Deployment</div>
+      <div class="skill-tags">
+        <span class="tag green">NVIDIA Jetson Orin Nano</span>
+        <span class="tag green">JetPack</span>
+        <span class="tag green">Linux</span>
+        <span class="tag green">Edge Inference</span>
+        <span class="tag green">Low-latency Deployment</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">🐍</div>
+      <div class="skill-card-title">Programming</div>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">C / C++</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">PyQt5</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">ReportLab</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">📊</div>
+      <div class="skill-card-title">Data & Visualization</div>
+      <div class="skill-tags">
+        <span class="tag">Tableau</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">Seaborn</span>
+        <span class="tag">Excel Analytics</span>
+        <span class="tag">KPI Dashboards</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">🛠️</div>
+      <div class="skill-card-title">Tools & Platforms</div>
+      <div class="skill-tags">
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">PyCharm</span>
+        <span class="tag">VSCode</span>
+        <span class="tag">Jupyter</span>
+        <span class="tag">Win32</span>
+        <span class="tag">Microsoft Office</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-label">03</span>
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-num">01</div>
+      <span class="project-status status-deployed">Production Deployed</span>
+      <div class="project-title">Pallet Inspection System</div>
+      <p class="project-desc">Real-time industrial inspection system automating pallet verification using computer vision and AI. Designed for non-technical operators on the factory floor with a streamlined UI.</p>
+      <div class="project-impact">↓ Manual inspection time: minutes → seconds</div>
+      <div class="project-tech">
+        <span class="tech-tag">YOLOv8</span>
+        <span class="tech-tag">OpenCV</span>
+        <span class="tech-tag">Spatial Grid Logic</span>
+        <span class="tech-tag">Excel Reporting</span>
+        <span class="tech-tag">Python</span>
+      </div>
+      <div class="project-links">
+        <a href="https://qaisaram.github.io/PALLET-INSPECTION-SYSTEM/" target="_blank">Live Demo →</a>
+        <a href="https://github.com/qaisaraM/PALLET-INSPECTION-SYSTEM" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">02</div>
+      <span class="project-status status-deployed">Production Deployed</span>
+      <div class="project-title">Process Tracking System</div>
+      <p class="project-desc">Digital workflow tracker replacing paper-based process records with real-time monitoring. Event-driven Python architecture with role-based access for PIC, Approval, User, and Guest tiers.</p>
+      <div class="project-impact">↑ Process transparency — paper → digital, real-time</div>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Two-scan Workflow</span>
+        <span class="tech-tag">Role-based Access</span>
+        <span class="tech-tag">Dashboard Sync</span>
+        <span class="tech-tag">Excel Backend</span>
+      </div>
+      <div class="project-links">
+        <a href="https://qaisaram.github.io/PROCESS-TRACKING-SYSTEM/" target="_blank">Live Demo →</a>
+        <a href="https://github.com/qaisaraM/PROCESS-TRACKING-SYSTEM" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">03</div>
+      <span class="project-status status-deployed">Production Deployed</span>
+      <div class="project-title">Stock Control System</div>
+      <p class="project-desc">Inventory management system improving warehouse visibility and operational efficiency. Automated stock-in / stock-out tracking with Tableau dashboards for KPI reporting and trend analysis.</p>
+      <div class="project-impact">↑ Warehouse visibility — manual → live KPI dashboards</div>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Excel Backend</span>
+        <span class="tech-tag">Tableau</span>
+        <span class="tech-tag">Lifecycle Tracking</span>
+        <span class="tech-tag">KPI Reporting</span>
+      </div>
+      <div class="project-links">
+        <a href="https://qaisaram.github.io/STOCK-CONTROL-SYSTEM/" target="_blank">Live Demo →</a>
+        <a href="https://github.com/qaisaraM/STOCK-CONTROL-SYSTEM" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">04</div>
+      <span class="project-status status-ml">ML / Analytics</span>
+      <div class="project-title">Healthcare Fraud Detection</div>
+      <p class="project-desc">Machine learning pipeline detecting fraudulent healthcare claims via feature engineering on structured medical data. Evaluated using precision, recall, and F1-score metrics.</p>
+      <div class="project-impact">Supervised classification + anomaly detection pipeline</div>
+      <div class="project-tech">
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">Feature Engineering</span>
+        <span class="tech-tag">Classification</span>
+        <span class="tech-tag">Anomaly Detection</span>
+        <span class="tech-tag">Python</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/qaisaraM/Healthcare-Fraud-Detection" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">05</div>
+      <span class="project-status status-ml">Data Analytics</span>
+      <div class="project-title">COVID-19 Global Vaccine Tracker</div>
+      <p class="project-desc">Global vaccination analytics project with time-series trend analysis, country-level comparisons, and Tableau dashboards for public health KPI reporting.</p>
+      <div class="project-impact">Country-level comparative vaccination coverage insights</div>
+      <div class="project-tech">
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">Time-series Analysis</span>
+        <span class="tech-tag">Tableau</span>
+        <span class="tech-tag">KPI Dashboards</span>
+        <span class="tech-tag">Python</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/qaisaraM/COVID-19-Global-Vaccine-Tracker" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section id="training">
+  <div class="section-header reveal">
+    <span class="section-label">04</span>
+    <h2 class="section-title">Certifications & Training</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="training-grid">
+    <div class="training-item reveal">
+      <span class="training-year">Nov 2025</span>
+      <span class="training-name">AI-102T00: Developing AI Solutions on Azure</span>
+      <span class="training-org">Trainocate Malaysia</span>
+    </div>
+    <div class="training-item reveal">
+      <span class="training-year">Jul 2025</span>
+      <span class="training-name">AI for All: From Basic to GenAI Practice</span>
+      <span class="training-org">NVIDIA</span>
+    </div>
+    <div class="training-item reveal">
+      <span class="training-year">Nov 2024</span>
+      <span class="training-name">Introduction to Data Engineering</span>
+      <span class="training-org">DeepLearning.AI</span>
+    </div>
+    <div class="training-item reveal">
+      <span class="training-year">Oct 2024</span>
+      <span class="training-name">AI Deep Learning in Industry 4.0</span>
+      <span class="training-org">Datalytic.AI</span>
+    </div>
+    <div class="training-item reveal">
+      <span class="training-year">Sep 2023</span>
+      <span class="training-name">Data Science</span>
+      <span class="training-org">General Assembly Malaysia</span>
+    </div>
+    <div class="training-item reveal">
+      <span class="training-year">Aug 2023</span>
+      <span class="training-name">Big Data with Python</span>
+      <span class="training-org">CCSD Council</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 4rem;">
+    <div class="section-header reveal">
+      <h3 class="section-title" style="font-size:1.6rem;">Education</h3>
+      <div class="section-line"></div>
+    </div>
+    <div class="tl-item reveal" style="border-left: 1px solid var(--border); padding-left: 3rem; position: relative; max-width: 600px;">
+      <div class="tl-dot" style="top:4px;"></div>
+      <div class="tl-meta">
+        <span class="tl-company">University of Malaysia Perlis (UniMAP)</span>
+        <span class="tl-period">Aug 2019 – Aug 2023</span>
+      </div>
+      <div class="tl-role">B.Eng. Biomedical Electronic (Hons)</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 4rem;">
+    <div class="section-header reveal">
+      <h3 class="section-title" style="font-size:1.6rem;">Languages</h3>
+      <div class="section-line"></div>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-item reveal">
+        <div class="lang-name">🇲🇾 Malay</div>
+        <div class="lang-level">Native</div>
+      </div>
+      <div class="lang-item reveal">
+        <div class="lang-name">🇬🇧 English</div>
+        <div class="lang-level">Intermediate</div>
+      </div>
+      <div class="lang-item reveal">
+        <div class="lang-name">🇯🇵 Japanese</div>
+        <div class="lang-level">Conversational</div>
+      </div>
+      <div class="lang-item reveal">
+        <div class="lang-name">🇩🇪 German</div>
+        <div class="lang-level">Beginner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal" style="justify-content:center; text-align:center; flex-direction:column; align-items:center; gap:0.5rem;">
+    <span class="section-label">05</span>
+    <h2 class="section-title">Let's Connect</h2>
+  </div>
+  <div class="contact-inner">
+    <p class="contact-desc reveal">
+      I'm seeking roles where AI, computer vision, and industrial systems intersect — smart manufacturing, edge AI, machine vision engineering, or process optimization. Open to opportunities in Malaysia and beyond.
+    </p>
+    <div class="contact-links reveal">
+      <a href="mailto:qaisaramardhiahr@gmail.com" class="contact-link">
+        <span class="icon">✉</span> qaisaramardhiahr@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/qaisara-mardhiah" target="_blank" class="contact-link">
+        <span class="icon">in</span> LinkedIn
+      </a>
+      <a href="https://github.com/qaisaraM" target="_blank" class="contact-link">
+        <span class="icon">⌥</span> GitHub
+      </a>
+    </div>
+    <div style="margin-top:1rem; font-family:'Space Mono',monospace; font-size:0.72rem; color:var(--muted);">
+      📍 Tasek Gelugor, Penang &nbsp;|&nbsp; +6014-9653683
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Qaisara Mardhiah Binti Roslan</span>
+  <span>Process Innovation Engineer — Penang, Malaysia</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Animated counter
+  function animateCount(el, target, suffix = '') {
+    let start = 0;
+    const duration = 1800;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = (typeof target === 'string')
+        ? target
+        : Math.floor(eased * parseFloat(target)) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  // Trigger stat animation when hero is visible
+  const statNums = document.querySelectorAll('.stat-num');
+  const heroObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      setTimeout(() => animateCount(statNums[0], 2, '+'), 400);
+      setTimeout(() => animateCount(statNums[1], 100, '%'), 600);
+      heroObs.disconnect();
+    }
+  }, { threshold: 0.5 });
+  heroObs.observe(document.getElementById('hero'));
+</script>
+
+</body>
+</html>
