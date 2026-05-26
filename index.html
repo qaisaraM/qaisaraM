@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qaisara Mardhiah | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0d1117;
+    color:white;
+    overflow-x:hidden;
+}
+
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(135deg,#0d1117,#111827);
+}
+
+header h1{
+    font-size:4rem;
+    color:#00c2ff;
+}
+
+header p{
+    margin-top:20px;
+    max-width:800px;
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#c9d1d9;
+}
+
+.btn{
+    margin-top:30px;
+    padding:14px 30px;
+    border:none;
+    border-radius:12px;
+    background:#00c2ff;
+    color:black;
+    font-weight:bold;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    font-size:2.5rem;
+    margin-bottom:40px;
+    color:#00c2ff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#161b22;
+    padding:25px;
+    border-radius:20px;
+    transition:0.3s;
+    border:1px solid #30363d;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#00c2ff;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#58a6ff;
+}
+
+.card p{
+    color:#c9d1d9;
+    line-height:1.7;
+}
+
+.tech{
+    margin-top:15px;
+    color:#00c2ff;
+    font-size:0.9rem;
+}
+
+.links{
+    margin-top:20px;
+}
+
+.links a{
+    text-decoration:none;
+    margin-right:15px;
+    color:#00c2ff;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.skill{
+    background:#21262d;
+    padding:12px 20px;
+    border-radius:30px;
+    border:1px solid #30363d;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#8b949e;
+}
+
+.highlight{
+    color:#00c2ff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Qaisara Mardhiah</h1>
+
+    <p>
+        Process Innovation Engineer • Data Science & Machine Learning Developer • Industrial Systems Builder
+    </p>
+
+    <a class="btn" href="#projects">View Projects</a>
+</header>
+
+<section>
+    <h2 class="section-title">About Me</h2>
+
+    <p style="line-height:2;color:#c9d1d9;">
+        I build real-world industrial and AI-driven systems that transform
+        manual workflows into scalable intelligent solutions.
+        My focus combines machine learning, industrial automation,
+        computer vision, and operational analytics to solve real production problems.
+    </p>
+</section>
+
+<section>
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">Machine Learning</div>
+        <div class="skill">YOLOv8</div>
+        <div class="skill">OpenCV</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Tableau</div>
+        <div class="skill">PyQt5</div>
+        <div class="skill">Streamlit</div>
+        <div class="skill">Industrial Automation</div>
+        <div class="skill">Computer Vision</div>
+        <div class="skill">Data Analytics</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Pallet Inspection System</h3>
+
+            <p>
+                AI-powered pallet inspection system using YOLOv8,
+                OpenCV validation, and industrial workflow automation.
+            </p>
+
+            <div class="tech">
+                YOLOv8 • OpenCV • Python • Excel Automation
+            </div>
+
+            <div class="links">
+                <a href="https://qaisaram.github.io/PALLET-INSPECTION-SYSTEM/" target="_blank">Live Demo</a>
+                <a href="https://github.com/qaisaraM/PALLET-INSPECTION-SYSTEM" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Process Tracking System</h3>
+
+            <p>
+                Digital workflow system replacing manual process tracking
+                with real-time operational monitoring.
+            </p>
+
+            <div class="tech">
+                Python • Event-Driven Systems • Dashboard Sync
+            </div>
+
+            <div class="links">
+                <a href="https://qaisaram.github.io/PROCESS-TRACKING-SYSTEM/" target="_blank">Live Demo</a>
+                <a href="https://github.com/qaisaraM/PROCESS-TRACKING-SYSTEM" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Stock Control System</h3>
+
+            <p>
+                Inventory and warehouse monitoring system with KPI tracking
+                and Tableau reporting dashboards.
+            </p>
+
+            <div class="tech">
+                Python • Tableau • Inventory Analytics
+            </div>
+
+            <div class="links">
+                <a href="https://qaisaram.github.io/STOCK-CONTROL-SYSTEM/" target="_blank">Live Demo</a>
+                <a href="https://github.com/qaisaraM/STOCK-CONTROL-SYSTEM" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Mission</h2>
+
+    <p style="line-height:2;color:#c9d1d9;">
+        Transform manual industrial processes into intelligent,
+        data-driven systems that improve efficiency,
+        scalability, and operational reliability.
+    </p>
+</section>
+
+<footer>
+    <p>
+        © 2026 Qaisara Mardhiah • Built with passion for Industrial AI & Innovation
+    </p>
+</footer>
+
+</body>
+</html>
